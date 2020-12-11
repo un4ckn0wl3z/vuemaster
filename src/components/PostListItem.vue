@@ -48,7 +48,7 @@ export default {
   },
   filters: {
     humanFriendlyDate (date) {
-      return moment.unix(date).format('MMMM Do YYYY, h:mm:ss a')
+      return moment.unix(date).locale('th').format('MMMM Do YYYY, h:mm:ss a')
     }
   }
 }

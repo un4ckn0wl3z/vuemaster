@@ -21,8 +21,8 @@
               {{ post.text }}
             </div>
           </div>
-          <div class="post-date text-faded">
-            {{ post.publishedAt | humanFriendlyDate }}
+          <div class="post-date text-faded" :title="post.publishedAt | humanFriendlyDate">
+            {{ post.publishedAt | diffForHumans }}
           </div>
         </div>
 </template>
@@ -48,7 +48,10 @@ export default {
   },
   filters: {
     humanFriendlyDate (date) {
-      return moment.unix(date).locale('th').format('MMMM Do YYYY, h:mm:ss a')
+      return moment.unix(date).format('MMMM Do YYYY, h:mm:ss a')
+    },
+    diffForHumans (date) {
+      return moment.unix(date).fromNow()
     }
   }
 }

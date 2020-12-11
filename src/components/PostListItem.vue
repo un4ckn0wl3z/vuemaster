@@ -22,13 +22,14 @@
             </div>
           </div>
           <div class="post-date text-faded">
-            {{ post.publishedAt }}
+            {{ post.publishedAt | humanFriendlyDate }}
           </div>
         </div>
 </template>
 
 <script>
 import sourceData from '@/data'
+import moment from 'moment'
 
 export default {
   props: {
@@ -43,6 +44,11 @@ export default {
     },
     userPostCount () {
       return Object.keys(this.user.posts).length
+    }
+  },
+  filters: {
+    humanFriendlyDate (date) {
+      return moment.unix(date).format('MMMM Do YYYY, h:mm:ss a')
     }
   }
 }

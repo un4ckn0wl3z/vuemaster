@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import AppDate from './components/AppDate.vue'
+import AppDate from '@/components/AppDate.vue'
 
 Vue.component('AppDate', AppDate)
 

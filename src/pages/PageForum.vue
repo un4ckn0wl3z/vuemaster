@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="forum-wrapper">
       <div class="col-full push-top">
           <div class="forum-header">
               <div class="forum-details">
@@ -9,7 +9,7 @@
               <a href="new-thread.html" class="btn-green btn-small">Start a thread</a>
           </div>
       </div>
-      <div class="col-full">
+      <div class="col-full push-top">
         <ThreadList :threads="threads"/>
       </div>
   </div>
@@ -40,3 +40,9 @@ export default {
 
 }
 </script>
+
+<style scoped>
+  .forum-wrapper {
+    width: 100%;
+  }
+</style>
